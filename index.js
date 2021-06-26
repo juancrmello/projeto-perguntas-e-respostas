@@ -12,12 +12,19 @@ app.get('/:nome/:lang', (req, res) => {
 
     var exibirMsg = true;
 
+    var produtos = [
+        { nome: 'Memoria', preco: 250 },
+        { nome: 'SSD', preco: 200 },
+        { nome: 'Processador', preco: 2000 },
+    ]
+
     res.render('index', {
         nome,
         lang,
         empresa: "juancrmello",
         inscritos: 100000,
-        msg: exibirMsg
+        msg: exibirMsg,
+        produtos
     });
 
 });
