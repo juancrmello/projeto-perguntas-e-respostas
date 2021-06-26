@@ -10,11 +10,14 @@ app.get('/:nome/:lang', (req, res) => {
 
     var lang = req.params.lang;
 
+    var exibirMsg = true;
+
     res.render('index', {
         nome,
         lang,
         empresa: "juancrmello",
-        inscritos: 100000
+        inscritos: 100000,
+        msg: exibirMsg
     });
 
 });

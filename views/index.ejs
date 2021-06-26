@@ -19,5 +19,10 @@
     <p>Empresa: <%= empresa %></p>
     <p>Inscritos no canal: <%= inscritos %></p>
 
+    <% if(msg) { %>
+       <h3>Isso é uma mensagem de erro!</h3> 
+    <% } else { %>
+        <h3>Nenhum erro!</h3>    
+    <% } %>
 </body>
 </html>
