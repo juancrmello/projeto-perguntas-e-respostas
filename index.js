@@ -6,28 +6,9 @@ app.set('view engine', 'ejs');
 // Estou dizendo para o Express que permita a utilização de arquivos estáticos, como css, imgs e etc
 app.use(express.static('public'));
 
-app.get('/:nome/:lang', (req, res) => {
+app.get('/', (req, res) => {
 
-    var nome = req.params.nome;
-
-    var lang = req.params.lang;
-
-    var exibirMsg = true;
-
-    var produtos = [
-        { nome: 'Memoria', preco: 250 },
-        { nome: 'SSD', preco: 200 },
-        { nome: 'Processador', preco: 2000 },
-    ]
-
-    res.render('index', {
-        nome,
-        lang,
-        empresa: "juancrmello",
-        inscritos: 100000,
-        msg: exibirMsg,
-        produtos
-    });
+    res.render('index');
 
 });
 
