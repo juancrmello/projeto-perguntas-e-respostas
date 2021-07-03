@@ -41,5 +41,18 @@ app.post('/salvarpergunta', (req, res) => {
         res.redirect('/');
     })
 
+});
+
+app.get("/pergunta/:id", (req, res) => {
+    var id = req.params.id;
+    Pergunta.findOne({
+        where: { id: id }
+    }).then(pergunta => {
+        if (pergunta != undefined) { // Pergunta encontrada
+            res.render('pergunta');
+        } else { // Pergunta não encontrada
+            res.redirect('/');
+        }
+    });
 })
 app.listen(3000, () => {console.log("App rodando!")});
